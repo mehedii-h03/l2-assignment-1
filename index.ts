@@ -40,4 +40,15 @@ function processValue(value: string | number): string | number {
   }
 }
 
+interface Product {
+  name: string;
+  price: number;
+}
+
+function getMostExpensiveProduct(products: Product[]): Product | null {
+  return products.length > 0
+    ? products.reduce((max, curr) => (curr.price > max.price ? curr : max))
+    : null;
+}
+
 
