@@ -18,7 +18,7 @@ function concatenateArrays<T>(...arrays: T[][]): T[] {
 
 class Vehicle {
   constructor(private year: number, private make: string) {}
-  getInfo() {
+  getInfo(): string {
     return `Make: ${this.make}, Year: ${this.year}`;
   }
 }
@@ -27,11 +27,17 @@ class Car extends Vehicle {
   constructor(make: string, year: number, private model: string) {
     super(year, make);
   }
-  getModel() {
+  getModel(): string {
     return `Model: ${this.model}`;
   }
 }
 
-
+function processValue(value: string | number): string | number {
+  if (typeof value === "string") {
+    return value.length;
+  } else {
+    return value * 2;
+  }
+}
 
 
