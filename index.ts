@@ -12,6 +12,8 @@ function filterByRating(
   return items.filter((item) => item.rating >= 4);
 }
 
-
+function concatenateArrays<T>(...arrays: T[][]): T[] {
+  return arrays.reduce((acc, curr) => acc.concat(curr));
+}
 
 
