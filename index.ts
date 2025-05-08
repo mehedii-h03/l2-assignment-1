@@ -16,4 +16,22 @@ function concatenateArrays<T>(...arrays: T[][]): T[] {
   return arrays.reduce((acc, curr) => acc.concat(curr));
 }
 
+class Vehicle {
+  constructor(private year: number, private make: string) {}
+  getInfo() {
+    return `Make: ${this.make}, Year: ${this.year}`;
+  }
+}
+
+class Car extends Vehicle {
+  constructor(make: string, year: number, private model: string) {
+    super(year, make);
+  }
+  getModel() {
+    return `Model: ${this.model}`;
+  }
+}
+
+
+
 
