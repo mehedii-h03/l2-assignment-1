@@ -1,9 +1,5 @@
-function formatString(input: string, toUppercase?: boolean): string {
-  if (toUppercase) {
-    return input.toUpperCase();
-  } else {
-    return input.toLowerCase();
-  }
+function formatString(input: string, toUppercase: boolean = true): string {
+  return toUppercase ? input.toUpperCase() : input.toLowerCase();
 }
 
 type Item = { title: string; rating: number };
