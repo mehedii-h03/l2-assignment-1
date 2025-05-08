@@ -6,9 +6,9 @@ function formatString(input: string, toUppercase?: boolean): string {
   }
 }
 
-function filterByRating(
-  items: { title: string; rating: number }[]
-): { title: string; rating: number }[] {
+type Item = { title: string; rating: number };
+
+function filterByRating(items: Item[]): Item[] {
   return items.filter((item) => item.rating >= 4);
 }
 
@@ -17,7 +17,7 @@ function concatenateArrays<T>(...arrays: T[][]): T[] {
 }
 
 class Vehicle {
-  constructor(private year: number, private make: string) {}
+  constructor(public year: number, private make: string) {}
   getInfo(): string {
     return `Make: ${this.make}, Year: ${this.year}`;
   }
@@ -32,7 +32,7 @@ class Car extends Vehicle {
   }
 }
 
-function processValue(value: string | number): string | number {
+function processValue(value: string | number): number {
   if (typeof value === "string") {
     return value.length;
   } else {
@@ -78,6 +78,3 @@ async function squareAsync(n: number): Promise<number> {
     });
   }
 }
-
-squareAsync(4).then(console.log); // Output after 1s: 16
-squareAsync(-3).catch(console.error); // Output: Error: Negative number not allowed
